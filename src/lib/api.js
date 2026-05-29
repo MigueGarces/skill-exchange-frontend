@@ -13,4 +13,9 @@ api.interceptors.request.use((config) => {
   return config
 })
 
+export async function getSkills() {
+  const { data } = await api.get("/skills/")
+  return data.results ?? data
+}
+
 export default api
